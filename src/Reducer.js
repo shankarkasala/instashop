@@ -1,8 +1,6 @@
 import { combineReducers } from "redux";
-// import {expenseReducer} from "./expenseReducer";
-// import uiReducer from "./uiReducer";
+import { productDetails } from "./Pages/Products/Reducer/ProductReducer";
 const reducers = combineReducers({
-//   expenseReducer : expenseReducer,
-//   uiReducer : uiReducer
+  product : productDetails,
 });
 export default reducers;

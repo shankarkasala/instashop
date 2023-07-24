@@ -9,7 +9,9 @@
 
 .mainContent {
     width: 100%;
-  overflow-y: auto;
+    margin: 0 auto;
+    min-height: 450px;
+    overflow-y: auto;
 }
 
 .footer {
