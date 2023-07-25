@@ -5,6 +5,7 @@ import Products from "./Pages/Products/Products";
 import Footer from "./Components/Footer/Footer";
 import PageNotFound from "./PageNotFound";
 import Product from "./Pages/Product/Product";
+import CartItems from "./Pages/CartItems/CartItems";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Products />} />
             <Route path="/product" element={<Product />} />
+            <Route path="/cartItems" element={<CartItems />} />
             <Route path="*" Component={PageNotFound}/>
           </Routes>
         </main>

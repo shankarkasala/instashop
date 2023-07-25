@@ -11,7 +11,7 @@ import {
 import React from "react";
 import data from "../../data.json";
 import { useDispatch } from "react-redux";
-import { getProduct } from "./Actions/ProductActions";
+import { getProduct } from "./Actions/ProductsActions";
 import { useNavigate } from "react-router-dom";
 
 function Products() {
