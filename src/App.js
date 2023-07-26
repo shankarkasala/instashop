@@ -22,9 +22,9 @@ function App() {
             <Route path="*" Component={PageNotFound}/>
           </Routes>
         </main>
-        <footer className="footer">
+        <div className="footer">
           <Footer />
-        </footer>
+        </div>
       </div>
     </BrowserRouter>
   );

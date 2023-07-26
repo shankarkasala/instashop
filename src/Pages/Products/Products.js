@@ -37,21 +37,23 @@ function Products() {
                 flexDirection: "column",
                 margin: "16px",
                 cursor: "pointer",
+                boxShadow: "10px 10px 43px -22px rgba(0,0,0,0.75)",
               }}
               onClick={() => handleClickCard(res)}
             >
               <CardMedia
                 component="div"
                 sx={{
+                  height:"120px",
                   pt: "100%",
                 }}
                 image={res.image}
               />
               <CardContent sx={{ flexGrow: 1 }}>
-                <Typography gutterBottom variant="h5" component="h2">
+                <Typography gutterBottom variant="h5" component="h2" sx={{fontSize:"18px",fontWeight:"500"}}>
                   {res.title}
                 </Typography>
-                <Typography>{res.description}</Typography>
+                <Typography sx={{fontSize:"14px"}}>{res.description}</Typography>
               </CardContent>
               <CardActions>
                 <Button size="small">Buy</Button>

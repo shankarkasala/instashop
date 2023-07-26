@@ -1,16 +1,18 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Button, Container, Snackbar, Typography,Alert } from "@mui/material";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import Icon from "@mui/material/Icon";
-
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import "./product.css";
 import { cloneDeep } from "lodash";
 import { getSelectedProduct } from './Actions/ProductActions';
 function Product() {
   const [selectedSize, setSelectedSize] = useState('')
+  const [successAlert, setSuccesAlert] = useState(false)
+  const [failAlert, setFailAlert] = useState(false)
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const product = useSelector((state) => state.product);
@@ -28,26 +30,44 @@ function Product() {
 
   const SelectedButton = styled(Button)(({ theme }) => ({
     marginRight: "8px",
-    background: "#001C30",
+    background: "#27374D",
     color: "#ffff",
     "&:hover": {
-      background: "#001C30",
+      background: "#27374D",
       color: "#ffff",
     },
   }));
 
   const CartButton = styled(Button)(({ theme }) => ({
-    marginTop: "160px",
+    width:"120px",
+    marginTop: "200px",
     float: "right",
     padding: "8px",
-    background: "#001C30",
-    border: "1px solid #001C30",
-    color: "##fffff",
+    background: "#27374D",
+    border: "1px solid #27374D",
+    color: "#fff",
     fontSize: "12px",
     "&:hover": {
-      background: "#001C30",
+      background: "#27374D",
       color: "#fffff",
       fontSize: "12px",
+    },
+  }));
+
+  const CancelButton = styled(Button)(({ theme }) => ({
+    width:"120px",
+    marginTop: "200px",
+    float: "right",
+    padding: "8px",
+    background: "#DDE6ED",
+    border: "1px solid #27374D",
+    color: "#27374D",
+    fontSize: "12px",
+    "&:hover": {
+      background: "#DDE6ED",
+      color: "#27374D",
+      fontSize: "12px",
+      border: "1px solid #27374D",
     },
   }));
 
@@ -61,12 +81,24 @@ function Product() {
   }
 
   const handleSelectedItem = () => {
-    let selectedItem = cloneDeep(product?.product)
-    selectedItem.availableSizes = [selectedSize]
-    let cart = cloneDeep(cartItems.selectedProduct)
-    cart.push(selectedItem)
-    dispatch(getSelectedProduct(cart))
-    navigate('/cartItems')
+    if(selectedSize) {
+      setSuccesAlert(true)
+      let selectedItem = cloneDeep(product?.product)
+      selectedItem.availableSizes = [selectedSize]
+      let cart = cloneDeep(cartItems.selectedProduct)
+      cart.push(selectedItem)
+      dispatch(getSelectedProduct(cart))
+      setTimeout(()=>{
+      navigate('/cartItems')
+      },3000)
+    } else {
+      setFailAlert(true)
+    }
+  }
+
+  const handleCloseAlert = () => {
+    setFailAlert(false)
+    setSuccesAlert(false)
   }
 
   return (
@@ -75,25 +107,9 @@ function Product() {
     >
       <Box sx={{ height: "100%", width: "100%" }}>
         <div>
-          <Container
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              marginBottom: "8px",
-              padding: "0px",
-              marginLeft: "0px",
-            }}
-          >
-            <Icon
-              component={ArrowBackIcon}
-              sx={{ marginRight: "8px", cursor: "pointer" }}
-              onClick={handleBack}
-            />
-            <Typography variant="h5" sx={{ color: "#001C30" }}>
+            <Typography variant="h5" sx={{ color: "#001C30",marginBottom:"8px" }}>
               {product?.product?.title}
             </Typography>
-          </Container>
-
           <div className="productContainer">
             <img
               className="image"
@@ -118,11 +134,23 @@ function Product() {
                   </div>
                 ))}
               </div>
-              <CartButton onClick={handleSelectedItem} variant="contained">Add to cart</CartButton>
+              <CartButton onClick={handleSelectedItem} variant="contained" >Go to cart <ShoppingCartIcon/></CartButton>
+              <CancelButton onClick={handleBack} variant="outlined" sx={{marginRight:"8px"}}>Cancel</CancelButton>
             </div>
           </div>
         </div>
       </Box>
+      <Snackbar open={successAlert || failAlert} autoHideDuration={6000}  onClose={handleCloseAlert}>
+        {
+          successAlert ? <Alert onClose={handleCloseAlert} severity="success" sx={{ width: '100%' }}>
+          Item Added to the Cart!
+        </Alert> :
+        <Alert onClose={handleCloseAlert} severity="error" sx={{ width: '100%' }}>
+        select the avilable size!
+      </Alert>
+        }
+        
+      </Snackbar>
     </Container>
   );
 }

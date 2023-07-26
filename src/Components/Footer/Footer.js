@@ -1,8 +1,9 @@
 import React from 'react'
-
+import './footer.css'
+import { Typography } from '@mui/material'
 function Footer() {
   return (
-    <div>All Rights are reserved.</div>
+    <Typography className='content'>All Rights are reserved.</Typography>
   )
 }
 

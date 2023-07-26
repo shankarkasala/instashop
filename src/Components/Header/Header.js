@@ -8,6 +8,7 @@ import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
 import { useNavigate } from "react-router-dom";
+import LocalMallIcon from '@mui/icons-material/LocalMall';
 function Header() {
   const navigate = useNavigate();
 
@@ -33,9 +34,10 @@ function Header() {
     navigate("/");
   };
   return (
-    <AppBar position="static" sx={{ background: "#001C30" }}>
+    <AppBar position="static" sx={{ background: "#27374D" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+        <LocalMallIcon sx={{marginRight:"8px"}}/>
           <Typography
             variant="h6"
             noWrap
@@ -50,18 +52,17 @@ function Header() {
               cursor: "pointer",
             }}
           >
-            Insta Shopp
+            Shoppy
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
+            {/* <IconButton
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
-            ></IconButton>
+            ></IconButton> */}
           </Box>
           <Typography
             variant="h5"
@@ -79,16 +80,16 @@ function Header() {
               textDecoration: "none",
             }}
           >
-            Insta Shopp
+            Shoppy
           </Typography>
 
-          <Box sx={{ flexGrow: 0 }}>
+          {/* <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
-          </Box>
+          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>
