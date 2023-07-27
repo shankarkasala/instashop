@@ -22,6 +22,10 @@
     cursor: pointer;
 }
 
+.price {
+    margin-left: 16px;
+}
+
 .avilableSize {
     width: 16px;
     height: 16px;
@@ -41,4 +45,12 @@
 .avilableSize:hover {
     background: #001C30;
     color: #ffffff;
+}
+
+.dialogContent {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 12px 0px;
 }
