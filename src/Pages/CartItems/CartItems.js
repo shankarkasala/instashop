@@ -16,7 +16,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 // import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 import { cloneDeep } from "lodash";
@@ -27,7 +27,7 @@ import "./cartItems.css";
 function CartItems() {
   // const [qty, setQty] = React.useState("");
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const dispatch = useDispatch();
   const AddButton = styled(Button)(({ theme }) => ({
     marginLeft: "84px",
@@ -60,7 +60,7 @@ function CartItems() {
 
   return (
     <Container
-      sx={{ margin: "0 auto", width: "100%", margin: "24px", display: "flex" }}
+      sx={{ margin: "0 auto", width: "100%", display: "flex" }}
     >
       <Container>
         {product.selectedProduct.map((res) => {

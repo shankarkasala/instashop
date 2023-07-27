@@ -8,8 +8,8 @@ import {
   Rating,
   Dialog,
   DialogTitle,
-  DialogContent,
-  DialogContentText,
+  // DialogContent,
+  // DialogContentText,
   DialogActions,
 } from "@mui/material";
 import React, { useState } from "react";
@@ -123,9 +123,9 @@ function Product() {
     setSuccesAlert(false);
   };
 
-  const handleOpenDialog = () => {
-    setOpenDialog(true);
-  };
+  // const handleOpenDialog = () => {
+  //   setOpenDialog(true);
+  // };
 
   return (
     <Container
