@@ -18,6 +18,8 @@ function CartItems() {
               sx={{ marginRight: "8px", cursor: "pointer" }}
               onClick={handleBack}
             />
+
+            Cart Items
     </div>
   )
 }

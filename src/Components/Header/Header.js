@@ -1,43 +1,43 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Tooltip from "@mui/material/Tooltip";
 import { useNavigate } from "react-router-dom";
-import LocalMallIcon from '@mui/icons-material/LocalMall';
+import LocalMallIcon from "@mui/icons-material/LocalMall";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import Badge from "@mui/material/Badge";
+
+import "./header.css";
+import { styled } from "@mui/material";
+import { useSelector } from "react-redux";
+
 function Header() {
   const navigate = useNavigate();
-
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  const product = useSelector((state) => state.selectedProduct);
+console.log(product)
+  const StyledBadge = styled(Badge)(({ theme }) => ({
+    "& .MuiBadge-badge": {
+      right: -3,
+      top: 13,
+      border: `2px solid ${theme.palette.background.paper}`,
+      padding: "0 4px",
+    },
+  }));
 
   const handleBack = () => {
     navigate("/");
   };
+
+  const handleGoCart = () => {
+    navigate('/cartitems')
+  }
   return (
-    <AppBar position="static" sx={{ background: "#27374D" }}>
-      <Container maxWidth="xl">
+    <AppBar position="static" sx={{ background: "#27374D", display: "flex" }}>
+      <Container maxWidth="xl" sx={{ display: "flex" ,justifyContent:"space-between"}}>
         <Toolbar disableGutters>
-        <LocalMallIcon sx={{marginRight:"8px"}}/>
+          <LocalMallIcon sx={{ marginRight: "8px" }} />
           <Typography
             variant="h6"
             noWrap
@@ -54,43 +54,12 @@ function Header() {
           >
             Shoppy
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            {/* <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            ></IconButton> */}
-          </Box>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            Shoppy
-          </Typography>
-
-          {/* <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-          </Box> */}
         </Toolbar>
+        <IconButton aria-label="cart" onClick={handleGoCart}>
+          <StyledBadge badgeContent={product.selectedProduct.length} color="primary">
+            <ShoppingCartIcon sx={{ color: "#fff" }} />
+          </StyledBadge>
+        </IconButton>
       </Container>
     </AppBar>
   );
