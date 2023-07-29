@@ -129,7 +129,7 @@ function Product() {
 
   return (
     <Container
-      sx={{ width: "calc(100% - 120px)", margin: "0 auto", padding: "24px" }}
+      sx={{ width: "calc(100% - 120px)",height:"88vh", margin: "0 auto", padding: "24px" }}
     >
       <Box sx={{ height: "100%", width: "100%" }}>
         <div>
