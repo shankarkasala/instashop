@@ -229,7 +229,7 @@ function CartItems() {
                  
                 </Typography>
                 <Typography sx={{ fontSize: "14px", marginBottom: "12px" }}> <CurrencyRupeeIcon sx={{ fontSize: "14px" }} />{" "}
-                  {totalPrice * 0.02 || 0}</Typography>
+                  {Math.floor(totalPrice * 0.02) || 0}</Typography>
                 </Box>
                 <Box sx={{display:"flex",justifyContent:"space-between"}}>
                 <Typography sx={{ fontSize: "14px", marginBottom: "12px" }}>
@@ -249,7 +249,7 @@ function CartItems() {
                 </Typography>
                 <Typography sx={{ fontSize: "14px", marginBottom: "12px" }}>
                 <CurrencyRupeeIcon sx={{ fontSize: "14px" }} />{" "}
-                  {totalPrice + (totalPrice * 0.02)}
+                  {Math.floor(totalPrice + (totalPrice * 0.02))}
                 </Typography>
               </Box>
                
