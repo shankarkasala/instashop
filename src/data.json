@@ -11,7 +11,7 @@
                 "XL",
                 "XXL"
             ],
-            "price": 29.9,
+            "price": 799,
             "selectsize": ""
         },
         {
@@ -24,7 +24,7 @@
                 "M",
                 "L"
             ],
-            "price": 18.9,
+            "price": 999,
             "selectsize": ""
         },
         {
@@ -37,7 +37,7 @@
                 "M",
                 "L"
             ],
-            "price": 14.9,
+            "price": 1000,
             "selectsize": ""
         },
         {
@@ -48,7 +48,7 @@
             "availableSizes": [
                 "XL"
             ],
-            "price": 25.9,
+            "price": 499,
             "selectsize": ""
         },
         {
@@ -61,7 +61,7 @@
                 "L",
                 "XL"
             ],
-            "price": 10.9,
+            "price": 399,
             "selectsize": ""
         },
         {
@@ -73,7 +73,7 @@
                 "XL",
                 "XXL"
             ],
-            "price": 49.9,
+            "price": 559,
             "selectsize": ""
         }
     ]

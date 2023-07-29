@@ -1,4 +1,10 @@
-import { Card, Container, Typography } from "@mui/material";
+import {
+  Card,
+  Container,
+  LinearProgress,
+  Typography,
+  Box,
+} from "@mui/material";
 import React, { useEffect, useState } from "react";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import "./summary.css";
@@ -8,6 +14,7 @@ function Summary() {
 
   const [order, setOrder] = useState(false);
   const [procesing, setProcessing] = useState(false);
+  const [progress, setProgress] = React.useState(0);
 
   useEffect(() => {
     setTimeout(() => {
@@ -16,6 +23,19 @@ function Summary() {
     setTimeout(() => {
       setProcessing(true);
     }, 2000);
+    const timer = setInterval(() => {
+      setProgress((oldProgress) => {
+        if (oldProgress === 100) {
+          return 0;
+        }
+        const diff = Math.random() * 10;
+        return Math.min(oldProgress + diff, 100);
+      });
+    }, 350);
+
+    return () => {
+      clearInterval(timer);
+    };
   }, []);
 
   const handleBack = () => {
@@ -46,7 +66,19 @@ function Summary() {
             </div>
           </Container>
         ) : procesing ? (
-          <Typography variant="h5">Placing your order...</Typography>
+          <Container
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flexDirection: "column",
+            }}
+          >
+            <Typography variant="h5">Placing your order...</Typography>
+            <Box sx={{ width: "500px" ,marginTop:"8px"}}>
+              <LinearProgress variant="determinate" value={progress} />
+            </Box>
+          </Container>
         ) : (
           <Typography variant="h4">Hang on...</Typography>
         )}
