@@ -216,21 +216,43 @@ function CartItems() {
             </Typography>
             {product.selectedProduct.length > 0 && (
               <Box sx={{ padding: "24px 0" }}>
+                <Box sx={{display:"flex",justifyContent:"space-between"}}>
                 <Typography sx={{ fontSize: "14px", marginBottom: "12px" }}>
                   Price ({product.selectedProduct.length} items){" "}
-                  <CurrencyRupeeIcon sx={{ fontSize: "14px" }} />{" "}
-                  {totalPrice || 0}
                 </Typography>
+                <Typography sx={{ fontSize: "14px", marginBottom: "12px" }}> <CurrencyRupeeIcon sx={{ fontSize: "14px" }} />{" "}
+                  {totalPrice || 0}</Typography>
+                </Box>
+                <Box sx={{display:"flex",justifyContent:"space-between"}}>
+                <Typography sx={{ fontSize: "14px", marginBottom: "12px" }}>
+                  Gst(2%) 
+                 
+                </Typography>
+                <Typography sx={{ fontSize: "14px", marginBottom: "12px" }}> <CurrencyRupeeIcon sx={{ fontSize: "14px" }} />{" "}
+                  {totalPrice * 0.02 || 0}</Typography>
+                </Box>
+                <Box sx={{display:"flex",justifyContent:"space-between"}}>
                 <Typography sx={{ fontSize: "14px", marginBottom: "12px" }}>
                   Delivery Charges{" "}
-                  <CurrencyRupeeIcon sx={{ fontSize: "14px" }} />{" "}
+                 
+                </Typography>
+                <Typography sx={{ fontSize: "14px", marginBottom: "12px" ,color:"#00DFA2"}}>
+                <CurrencyRupeeIcon sx={{ fontSize: "14px" }} />{" "}
                   <strike>150</strike> Free Delivery
                 </Typography>
-
-                <Typography sx={{ fontSize: "14px", marginBottom: "12px" }}>
-                  Total Amount: <CurrencyRupeeIcon sx={{ fontSize: "14px" }} />{" "}
-                  {totalPrice}
+                </Box>
+                <hr/>
+                
+              <Box sx={{display:"flex",justifyContent:"space-between"}}>
+              <Typography sx={{ fontSize: "14px", marginBottom: "12px" }}>
+                  Total Amount: 
                 </Typography>
+                <Typography sx={{ fontSize: "14px", marginBottom: "12px" }}>
+                <CurrencyRupeeIcon sx={{ fontSize: "14px" }} />{" "}
+                  {totalPrice + (totalPrice * 0.02)}
+                </Typography>
+              </Box>
+               
               </Box>
             )}
           </Box>
