@@ -234,7 +234,7 @@ function Product() {
         fullWidth={true}
         maxWidth={"xs"}
       >
-        <DialogTitle id="alert-dialog-title">{"AWsome !!"}</DialogTitle>
+        <DialogTitle id="alert-dialog-title">{"AWesome !!"}</DialogTitle>
         <div className="dialogContent">
           <CheckCircleIcon sx={{ fontSize: "38px", color: "green" }} />
           <Typography>Item Added to cart!!</Typography>
