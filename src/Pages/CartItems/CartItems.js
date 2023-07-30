@@ -26,6 +26,8 @@ import { cloneDeep } from "lodash";
 import { getSelectedProduct } from "../Product/Actions/ProductActions";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 import ReportProblemIcon from "@mui/icons-material/ReportProblem";
+import HomeIcon from '@mui/icons-material/Home';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import "./cartItems.css";
 
 function CartItems() {
@@ -50,9 +52,9 @@ function CartItems() {
     },
   }));
   const product = useSelector((state) => state.selectedProduct);
-  // const handleBack = () => {
-  //   navigate("/");
-  // };
+  const handleBack = () => {
+    navigate("/");
+  };
   let temp = product?.selectedProduct?.map((res) => res.price);
 
   let totalPrice =
@@ -96,10 +98,13 @@ function CartItems() {
       sx={{ marginTop: "24px", width: "100%", height: "84vh", display: "flex" }}
     >
       <Container>
-        <Typography variant="h5" sx={{ marginLeft: "16px", color: "#27374D" }}>
-          {" "}
-          {"> "}Cart Items
-        </Typography>
+      <Box sx={{ margin: "8px 16px", color: "#27374D" ,display:"flex",alignItems:"center",cursor:"pointer"}}>
+          <div onClick={handleBack}>
+          <HomeIcon sx={{margin:"0px 8px"}}/>
+          </div>
+          <KeyboardArrowRightIcon  sx={{marginRight:"8px"}}/>
+          <Typography variant="h6"  sx={{ color: "#001C30"}}> Cart Items</Typography>
+        </Box>
         {product.selectedProduct.length > 0 ? (
           <>
             {product.selectedProduct.map((res) => {
@@ -169,12 +174,12 @@ function CartItems() {
                     image={res.image}
                     alt={res.title}
                   />
-                  <div
+                  {/* <div
                     className="deleteIcon"
                     onClick={() => hendleOpenDialog(res)}
                   >
                     <DeleteOutlinedIcon sx={{ cursor: "pointer" }} />
-                  </div>
+                  </div> */}
                 </Card>
               );
             })}
@@ -199,7 +204,7 @@ function CartItems() {
       <Card
         sx={{
           position: "relative",
-          marginTop: "28px",
+          marginTop: "36px",
           marginBottom: "8px",
           padding: "8px",
           height: "332px",
@@ -225,7 +230,7 @@ function CartItems() {
                 </Box>
                 <Box sx={{display:"flex",justifyContent:"space-between"}}>
                 <Typography sx={{ fontSize: "14px", marginBottom: "12px" }}>
-                  Gst(2%) 
+                  Gst (2%) 
                  
                 </Typography>
                 <Typography sx={{ fontSize: "14px", marginBottom: "12px" }}> <CurrencyRupeeIcon sx={{ fontSize: "14px" }} />{" "}

@@ -3,7 +3,7 @@
         {
             "_id": "dress1",
             "image": "https://i.pinimg.com/originals/24/f8/93/24f8932c5c02f43c6f1079f917762404.jpg",
-            "title": "Midi sundress with shirring detail",
+            "title": "Jacket sundress with shirring detail",
             "description": "This is for all the latest trends, no matter who you are, where you’re from and what you’re up to. Exclusive to ASOS",
             "availableSizes": [
                 "S",
@@ -17,7 +17,7 @@
         {
             "_id": "dress2",
             "image": "https://images.unsplash.com/photo-1617137968427-85924c800a22?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWVucyUyMGZhc2hpb258ZW58MHx8MHx8fDA%3D&w=1000&q=80",
-            "title": "Midi sundress with ruched front",
+            "title": "Suit sundress with ruched front",
             "description": "This is for all the latest trends, no matter who you are, where you’re from and what you’re up to. Exclusive to ASOS",
             "availableSizes": [
                 "S",
@@ -30,7 +30,7 @@
         {
             "_id": "dress3",
             "image": "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWVucyUyMGZhc2hpb258ZW58MHx8MHx8fDA%3D&w=1000&q=80",
-            "title": "Midi dress in pink ditsy floral",
+            "title": "Jacket dress in brown ditsy floral",
             "description": "This is for all the latest trends, no matter who you are, where you’re from and what you’re up to. Exclusive to ASOS",
             "availableSizes": [
                 "S",
@@ -43,7 +43,7 @@
         {
             "_id": "dress4",
             "image": "https://images.pexels.com/photos/1254502/pexels-photo-1254502.jpeg?cs=srgb&dl=pexels-ali-madad-sakhirani-1254502.jpg&fm=jpg",
-            "title": "cami maxi dress in polka dot",
+            "title": "Shirt maxi dress in polka",
             "description": "This is for all the latest trends, no matter who you are, where you’re from and what you’re up to. Exclusive to ASOS",
             "availableSizes": [
                 "XL"
@@ -54,7 +54,7 @@
         {
             "_id": "dress5",
             "image": "https://i.pinimg.com/originals/fc/45/29/fc45297d655a97864e67ac571c68d7a2.jpg",
-            "title": "Frill mini dress in yellow polka dot",
+            "title": "Coat dress in blue denim",
             "description": "This is for all the latest trends, no matter who you are, where you’re from and what you’re up to. Exclusive to ASOS",
             "availableSizes": [
                 "M",
@@ -67,7 +67,7 @@
         {
             "_id": "dress6",
             "image": "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?cs=srgb&dl=pexels-chloe-1043474.jpg&fm=jpg",
-            "title": "Midi tea dress in blue and red spot",
+            "title": "Pant tea dress in blue",
             "description": "This is for all the latest trends, no matter who you are, where you’re from and what you’re up to. Exclusive to ASOS",
             "availableSizes": [
                 "XL",

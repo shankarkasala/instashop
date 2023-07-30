@@ -22,6 +22,8 @@ import { cloneDeep } from "lodash";
 import { getSelectedProduct } from "./Actions/ProductActions";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
+import HomeIcon from '@mui/icons-material/Home';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 function Product() {
   const [selectedSize, setSelectedSize] = useState("");
@@ -57,7 +59,7 @@ function Product() {
   }));
 
   const CartButton = styled(Button)(({ theme }) => ({
-    width: "120px",
+    width: "150px",
     marginTop: "150px",
     float: "right",
     padding: "8px",
@@ -73,7 +75,7 @@ function Product() {
   }));
 
   const CancelButton = styled(Button)(({ theme }) => ({
-    width: "120px",
+    width: "150px",
     marginTop: "150px",
     float: "right",
     padding: "8px",
@@ -133,12 +135,13 @@ function Product() {
     >
       <Box sx={{ height: "100%", width: "100%" }}>
         <div>
-          <Typography
-            variant="h5"
-            sx={{ color: "#001C30", marginBottom: "8px" }}
-          >
-            {product?.product?.title}
-          </Typography>
+        <Box sx={{ margin: "8px 0px", color: "#27374D" ,display:"flex",alignItems:"center",cursor:"pointer"}}>
+          <div onClick={handleBack}>
+          <HomeIcon sx={{margin:"0px 8px"}}/>
+          </div>
+          <KeyboardArrowRightIcon  sx={{marginRight:"8px"}}/>
+          <Typography variant="h6"  sx={{ color: "#001C30"}}> {product?.product?.title}</Typography>
+        </Box>
           <div className="productContainer">
             <img
               className="image"
